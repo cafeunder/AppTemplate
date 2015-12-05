@@ -1,12 +1,12 @@
 package title;
 
 import system.MouseFacade;
+import mvcModule.Controller;
 import mvcModule.Model;
-import mvcModule.SceneChangeFacade;
 import mvcModule.SceneFactory;
 
 public class TitleModel extends Model {
-	public TitleModel(SceneChangeFacade scfacade){
+	public TitleModel(Controller.SceneChangeFacade scfacade){
 		super(scfacade);
 	}
 	

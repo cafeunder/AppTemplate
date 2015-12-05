@@ -1,7 +1,7 @@
 package game;
 import java.awt.Color;
 
-import mvcModule.SceneChangeFacade;
+import mvcModule.Controller;
 import mvcModule.SceneFactory;
 import system.DrawLibrary;
 import system.FontMgr;
@@ -9,7 +9,7 @@ import system.MouseFacade;
 import mvcModule.Model;
 
 public class GameModel extends Model{
-	public GameModel(SceneChangeFacade scfacade){
+	public GameModel(Controller.SceneChangeFacade scfacade){
 		super(scfacade);
 	}
 	

@@ -1,14 +1,13 @@
 package title;
 
 import java.awt.Color;
-
 import system.DrawLibrary;
 import system.FontMgr;
-import mvcModule.SceneChangeFacade;
+import mvcModule.Controller;
 import mvcModule.ViewerComponent;
 
 public class TitleViewerComponent extends ViewerComponent{
-	public TitleViewerComponent(SceneChangeFacade scfacade){
+	public TitleViewerComponent(Controller.SceneChangeFacade scfacade){
 		super(scfacade);
 	}
 	

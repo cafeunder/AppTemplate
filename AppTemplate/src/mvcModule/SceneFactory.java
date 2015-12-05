@@ -18,7 +18,7 @@ public class SceneFactory {
 		}
 	}
 	
-	public static SceneData getSceneData(SceneChangeFacade scfacade, SCENE_ID id, int stage_num){
+	public static SceneData getSceneData(Controller.SceneChangeFacade scfacade, SCENE_ID id, int stage_num){
 		switch(id){
 		case GAME:
 			GameModel gmodel = new GameModel(scfacade);

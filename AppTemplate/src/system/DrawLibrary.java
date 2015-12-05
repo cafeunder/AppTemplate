@@ -24,30 +24,32 @@ public class DrawLibrary{
 	
 	private JPanel jp;	//ビュー
 	private Graphics2D g2d;	//Graphics2Dオブジェクト
-	
+
 	/**
-	* 画像を描画するメソッド
-	* @param img Imageオブジェクト
-	* @param x 描画x位置
-	* @param y 描画y位置
-	**/
+	 * 直線を描画するメソッド
+	 * @param x1 始点のx座標
+	 * @param y1 始点のy座標
+	 * @param x2 終点のx座標
+	 * @param y2 終点のy座標
+	 * @param c 色
+	 */
 	public void drawLine(int x1, int y1, int x2, int y2, Color c){
 		g2d.setColor(c);
 		g2d.drawLine(x1, y1, x2, y2);
 	}
 	/**
 	* 画像を描画するメソッド
+	* @param x 描画x座標
+	* @param y 描画y座標
 	* @param img Imageオブジェクト
-	* @param x 描画x位置
-	* @param y 描画y位置
 	**/
 	public void drawImage(int x, int y, Image img){
 		g2d.drawImage(img, x, y, jp);
 	}
 	/**
-	* アルファブレンドで画像を描画 
-	* @param x 描画x位置
-	* @param y 描画y位置
+	* アルファブレンドで画像を描画するメソッド
+	* @param x 描画x座標
+	* @param y 描画y座標
 	* @param img Imageオブジェクト
 	* @param param アルファパラメータ(0.0~1.0)
 	**/
@@ -58,9 +60,9 @@ public class DrawLibrary{
 	}
 
 	/**
-	* 円をアルファブレンドで描画 
-	* @param x 描画中心x位置
-	* @param y 描画中心y位置
+	* 円を描画するメソッド
+	* @param x 描画中心x座標
+	* @param y 描画中心y座標
 	* @param radius 半径
 	* @param color Colorオブジェクト
 	* @param fill 塗りつぶすかどうか
@@ -79,9 +81,9 @@ public class DrawLibrary{
 	}
 	
 	/**
-	* 円をアルファブレンドで描画 
-	* @param x 描画中心x位置
-	* @param y 描画中心y位置
+	* 円をアルファブレンドで描画するメソッド
+	* @param x 描画中心x座標
+	* @param y 描画中心y座標
 	* @param radius 半径
 	* @param color Colorオブジェクト
 	* @param fill 塗りつぶすかどうか
@@ -104,9 +106,9 @@ public class DrawLibrary{
 	}
 	
 	/**
-	* 四角形を描画 
-	* @param x 描画x位置
-	* @param y 描画y位置
+	* 四角形を描画するメソッド
+	* @param x 描画x座標
+	* @param y 描画y座標
 	* @param width 四角形の横幅
 	* @param height 四角形の縦幅
 	* @param color Colorオブジェクト
@@ -123,9 +125,9 @@ public class DrawLibrary{
 	}
 	
 	/**
-	* アルファブレンドで四角形を描画 
-	* @param x 描画x位置
-	* @param y 描画y位置
+	* アルファブレンドで四角形を描画するメソッド
+	* @param x 描画x座標
+	* @param y 描画y座標
 	* @param width 四角形の横幅
 	* @param height 四角形の縦幅
 	* @param fill 塗りつぶすかどうか
@@ -146,14 +148,14 @@ public class DrawLibrary{
 	}
 	
 	/**
-	* 画像を回転して描画 （画像の中心座標を指定）
-	* @param x 描画中心x位置（回転の支点）
-	* @param y 描画中心y位置（回転の支点）
+	* 画像を回転して描画するメソッド
+	* @param x 描画中心x座標（回転の支点）
+	* @param y 描画中心y座標（回転の支点）
 	* @param img Imageオブジェクト
 	* @param angle 回転ラジアン角
 	**/
 	public void drawImageRotate(int x, int y, Image img, float angle, boolean inter){
-		if(inter) g2d.setRenderingHint(RenderingHints.KEY_INTERPOLATION, RenderingHints.VALUE_INTERPOLATION_BICUBIC);
+		if(inter) g2d.setRenderingHint(RenderingHints.KEY_INTERPOLATION, RenderingHints.VALUE_INTERPOLATION_BILINEAR);
 
 		g2d.rotate(angle, x, y);	//座標を回転
 		g2d.drawImage(img, x-img.getWidth(jp)/2, y-img.getHeight(jp)/2, jp);	//画像を描画
@@ -163,9 +165,9 @@ public class DrawLibrary{
 	}
 	
 	/**
-	* 画像を拡縮して描画 （画像の中心座標を指定）
-	* @param x 描画中心x位置（拡縮の支点）
-	* @param y 描画中心y位置（拡縮の支点）
+	* 画像を拡縮して描画するメソッド
+	* @param x 描画中心x座標（拡縮の支点）
+	* @param y 描画中心y座標（拡縮の支点）
 	* @param img Imageオブジェクト
 	* @param rate 拡縮倍率
 	* @param inter 補間を行うかどうか
@@ -183,9 +185,9 @@ public class DrawLibrary{
 	}
 
 	/**
-	* 画像を拡縮・回転して描画 （画像の中心座標を指定）
-	* @param x 描画中心x位置（拡縮・回転の支点）
-	* @param y 描画中心y位置（拡縮・回転の支点）
+	* 画像を拡縮・回転して描画するメソッド
+	* @param x 描画中心x座標（拡縮・回転の支点）
+	* @param y 描画中心y座標（拡縮・回転の支点）
 	* @param img Imageオブジェクト
 	* @param angle 回転ラジアン角
 	* @param rate 拡縮倍率
@@ -206,13 +208,14 @@ public class DrawLibrary{
 	}
 	
 	/**
-	* 文字列を描画
-	* @param x 描画x位置
-	* @param y 描画y位置
-	* @param String 文字列
-	* @param Color 文字色
-	* @param Font フォントデータ
-	**/	
+	 * 文字列を描画するメソッド
+	 * @param x 描画x座標
+	 * @param y 描画y座標
+	 * @param str 文字列
+	 * @param color 色
+	 * @param font フォントデータ
+	 * @param antialias アンチエイリアス
+	 */
 	public void drawString(int x, int y, String str, Color color, Font font, boolean antialias){
 		g2d.setColor(color);	//色をセット
 		g2d.setFont(font);		//フォントをセット

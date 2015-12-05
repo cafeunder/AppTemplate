@@ -3,9 +3,9 @@ package mvcModule;
 import system.MouseFacade;
 
 public abstract class Model{
-	protected SceneChangeFacade scfacade;
+	protected Controller.SceneChangeFacade scfacade;
 
-	public Model(SceneChangeFacade scfacade){
+	public Model(Controller.SceneChangeFacade scfacade){
 		this.scfacade = scfacade;
 	}
 	

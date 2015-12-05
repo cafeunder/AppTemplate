@@ -6,6 +6,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
+
 import javax.swing.Timer;
 
 import mvcModule.SceneFactory.SceneData;
@@ -16,6 +17,21 @@ import system.MouseFacade;
  */
 public class Controller extends Component implements ActionListener, MouseListener, MouseMotionListener
 {
+	public class SceneChangeFacade {
+		private Controller controller;
+		
+		public SceneChangeFacade(Controller controller){
+			this.controller = controller;
+		}
+		
+		public void sceneChange(SceneFactory.SCENE_ID id){
+			controller.sceneChange(id);
+		}
+		public void sceneChange(SceneFactory.SCENE_ID id, int stage_num){
+			controller.sceneChange(id,stage_num);
+		}
+	}	
+	
 	private static final long serialVersionUID = 1L;
 
 	private Model model;	//ƒ‚ƒfƒ‹

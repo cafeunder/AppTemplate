@@ -1,9 +1,9 @@
 package mvcModule;
 
 public abstract class ViewerComponent {
-	protected SceneChangeFacade scfacade;
+	protected Controller.SceneChangeFacade scfacade;
 
-	public ViewerComponent(SceneChangeFacade scfacade){
+	public ViewerComponent(Controller.SceneChangeFacade scfacade){
 		this.scfacade = scfacade;
 	}
 	

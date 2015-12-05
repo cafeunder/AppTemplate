@@ -1,15 +1,11 @@
 package game;
 
-import java.awt.Color;
-
-import system.DrawLibrary;
-import system.FontMgr;
-import mvcModule.SceneChangeFacade;
+import mvcModule.Controller;
 import mvcModule.ViewerComponent;
 
 public class GameViewerComponent extends ViewerComponent {
 	private GameModel gModel;
-	public GameViewerComponent(SceneChangeFacade scfacade, GameModel gModel){
+	public GameViewerComponent(Controller.SceneChangeFacade scfacade, GameModel gModel){
 		super(scfacade);
 		this.gModel = gModel;
 	}
